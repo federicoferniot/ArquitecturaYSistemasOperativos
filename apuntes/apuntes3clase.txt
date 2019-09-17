@@ -1,0 +1,26 @@
+/etc/apt/sources.list reempleazamos ar.archives por old-releases
+
+dispositivos->red->preferencias de red -Conectado a "Adaptador puente"
+
+sudo apt-get update para actualizar la cache
+
+sudo apt-get install openssh-server
+
+ifconfig para ver la ip
+
+xming Ejecutar xlaunch
+
+putty con ip virtual - Connection->SSG->X11->Enable
+
+grep 'root' /etc/passwd  # busca root dentro del directorio o archivo
+
+strings /bin/ls | grep 'all' | wc -l   #strings texto plano, pipe pasa resultado anterior al proximo comando
+					# wc -l cantidad de lineas
+
+strings /bin/ls | grep '^str'		# ^ busca sólo al principio de la linea
+strings /bin/ls | grep 'mp$'		# $ que termine con mp -i mayus o minus
+grep -v '^$'				# -v hace lo contrario, no traer los espacios en blanco
+
+grep '[rR]oo' 				# [...]opciones dentro de parentesis [^...] para negar dentro del parentesis
+					# [a-z] rango de "a" a "z" [a-zA-Z] de a a z o de A a Z
+egrep '[0-9]{3}'			# egrep para usar {} indicando número de repeticiones de lo anterior {1,2} 1 o 2
