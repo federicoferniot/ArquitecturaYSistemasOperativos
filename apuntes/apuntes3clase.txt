@@ -17,10 +17,17 @@ grep 'root' /etc/passwd  # busca root dentro del directorio o archivo
 strings /bin/ls | grep 'all' | wc -l   #strings texto plano, pipe pasa resultado anterior al proximo comando
 					# wc -l cantidad de lineas
 
-strings /bin/ls | grep '^str'		# ^ busca s�lo al principio de la linea
+strings /bin/ls | grep '^str'		# ^ busca sólo al principio de la linea
 strings /bin/ls | grep 'mp$'		# $ que termine con mp -i mayus o minus
 grep -v '^$'				# -v hace lo contrario, no traer los espacios en blanco
 
 grep '[rR]oo' 				# [...]opciones dentro de parentesis [^...] para negar dentro del parentesis
 					# [a-z] rango de "a" a "z" [a-zA-Z] de a a z o de A a Z
-egrep '[0-9]{3}'			# egrep para usar {} indicando n�mero de repeticiones de lo anterior {1,2} 1 o 2
+egrep '[0-9]{3}'			# egrep para usar {} indicando número de repeticiones de lo anterior {1,2} 1 o 2
+touch archivo.txt			# si no existe el archivo lo crea vacío, si existe cambia fecha y hora
+chmod 740 archivo.txt			# cambiar valores de los permisos 740 (7 todos los permisos, 4(grupo) solo de lectura y 0 ninguno)
+chmod u=rw,g=r,o=rwx archivo.txt
+chmod +x archivo.txt 			# agrega permisos de ejecución a todos
+chown alumnos archivo01.txt 		# cambia el dueño del archivo
+chown alumnos:users archivo01.txt	# cambia el usuario y grupo
+chgrp users archivo01.txt		# cambiar el grupo del archivo
