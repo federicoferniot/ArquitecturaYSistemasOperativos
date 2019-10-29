@@ -1,0 +1,8 @@
+dmesg | grep sd
+ls -l /dev/sda*
+fdisk -l /dev/sda
+fdisk /dev/sdb  # entrar a herramienta
+  p para ver particiones
+  n crear partición
+    p primaria
+    e extendida
