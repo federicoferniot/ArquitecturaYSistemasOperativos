@@ -1,0 +1,9 @@
+dmesg | grep sd # ver lo que fue levantando de los discos
+mkswap /dev/sdb1 # 
+swapon /dev/sdb1 # habilita
+cat /proc/swaps # ver particiones swap
+swapoff /dev/sdb1 # deshabilita
+mkfs.ext4 /dev/sdb2 # formatea particion
+mount /dev/sdb2 /disco # monta disco en directorio /disco
+df -h # información de las particiones
+umount /disco # desmonta el disco
