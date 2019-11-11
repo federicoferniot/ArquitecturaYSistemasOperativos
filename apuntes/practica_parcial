@@ -1,0 +1,36 @@
+con useradd poner la opcion -m
+useradd -m admintp
+passwd admintp
+
+fdisk /dev/sdb
+  -ne
+  -t -> 8e Lo mismo para sdc
+  
+
+pvcreate /dev/sdb1 lo mismo para /dev/sdc1
+vgcreate vg1 /dev/sdb1
+vgcreate vg2 /dev/sdc1
+
+lvcreate -l 100%FREE -n lvappa vg1
+lvcreate -l 100%FREE -n lvappb vg2
+
+mkdir appa
+mkdir appb
+
+mkfs.ext4 /dev/vg1/lvappa
+mkfs.ext4 /dev/vg2/lvappb
+
+mount /dev/vg1/lvappa appa
+mount /dev/vg2/lvappb appb
+
+addgroup nodeapps
+useradd -m appauser
+useradd -m appbuser
+
+usermod -g nodeapps appauser
+usermod -g nodeapps appbuser
+
+en appa creardirectorio app y cambiar owner y grupo
+chown appauser:nodeapps app
+
+apt-get install git nodejs
